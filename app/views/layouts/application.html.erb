@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Art Museum Database</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="grey lighten-3">
+    <nav>
+      <div class="nav-wrapper red darken-4">
+        <a href="#" class="brand-logo center">Art Museum Database</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><%= link_to "Museums", museums_path %></li>
+          <li><%= link_to "Artists", artists_path %></li>
+          <li><%= link_to "Paintings", paintings_path %></li>
+        </ul>
+      </div>
+    </nav> 
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

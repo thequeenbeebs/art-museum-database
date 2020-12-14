@@ -1,0 +1,26 @@
+
+<div class="row">
+    <div class="col s6">
+        <img src= <%= @painting.img_url %> width="400">
+    </div>
+
+    <div class="col s6">
+        <h1><%= @painting.name %></h1>
+
+        <h2>Year Completed: <%= @painting.year %></h2>
+
+        <h2>Artist: <%= link_to @painting.artist.name, artist_path(@painting.artist) %></h2>
+
+        <h2>Museum: <%= link_to @painting.museum.name, museum_path(@painting.museum) %></h2>
+
+        <p>
+            <%= button_to "Edit Painting", {:action => "edit"}, :method => :get %>
+        </p>
+
+        <p>
+            <%= form_for @painting, method: :delete do |f| %>
+                <div><%= f.submit "Delete Painting"%></div>
+            <% end %>
+        </p>
+    </div>
+</div>

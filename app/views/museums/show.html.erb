@@ -1,0 +1,11 @@
+<h1><%= @museum.name %></h1>
+
+<h3>Location: <%= @museum.location %></h3>
+
+<h4>Paintings:</h4>
+<ul>
+<% @museum.paintings.each do |painting| %>
+    <li><%= link_to painting.name, painting_path(painting) %></li>
+<% end %>
+</ul>
+

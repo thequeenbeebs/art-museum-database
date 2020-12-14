@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col s6">
+        <img src= <%= @artist.img_url %> width="400">
+    </div>
+
+    <div class="col s6">
+        <h1><%= @artist.name %></h1>
+
+        <h3>Born: <%= @artist.birth_year %></h3>
+
+        <h3>Died: <%= @artist.death_year %></h3>
+
+        <h3>Nationality: <%= @artist.nationality %></h3>
+
+        <h3>Style: <%= @artist.style %></h3>
+
+        <h4>Paintings:</h4>
+        <ul>
+            <% @artist.paintings.each do |painting| %>
+                <li><%= link_to painting.name, painting_path(painting) %></li>
+            <% end %>
+        </ul>
+    </div>
+</div>

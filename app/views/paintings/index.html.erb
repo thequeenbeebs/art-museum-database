@@ -1,0 +1,11 @@
+<h1>Paintings</h1>
+
+<ul>
+    <% @paintings.each do |painting| %>
+        <li><%= link_to painting.name, painting_path(painting) %></li>
+    <% end %>
+</ul>
+
+<p>
+    <%= button_to "Add a Painting", {:action => "new"}, :method => :get %>
+</p>
